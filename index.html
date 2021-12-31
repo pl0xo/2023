@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+// Get todays date and time
+  var now = new Date().getTime();
+// Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "НОВЫЙ ГОД БУДИТ!";
+  }
+}, 1000);
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+p {
+font-size: 60px;
+font-family: 'Oswald';
+text-align: center;
+}
+</style>
+<br>
+<br>
+<p>19:13</p>
